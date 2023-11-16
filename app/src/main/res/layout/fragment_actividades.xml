@@ -33,36 +33,38 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/image_add_activity"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
 
-                app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                >
+
+
+                app:cardCornerRadius="12dp">
 
                 <LinearLayout
 
-                    android:outlineSpotShadowColor="#6f6f6f"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:outlineSpotShadowColor="#6f6f6f"
+                    android:padding="16dp">
 
                     <ImageView
-                        android:src="@drawable/add"
+                        android:id="@+id/image_add_activity"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_height="80dp"
+                        android:src="@drawable/add" />
 
                     <TextView
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Añadir"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="Añadir"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>

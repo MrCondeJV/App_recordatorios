@@ -51,6 +51,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/frase_add_activity"
                         android:src="@drawable/add"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
