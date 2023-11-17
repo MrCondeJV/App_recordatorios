@@ -1,14 +1,20 @@
 package com.anonProject.app_recordatorios;
 
 
+import android.content.ClipData;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.anonProject.app_recordatorios.db.DbHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -23,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    CardView addActivity;
+
 
 
 
@@ -58,9 +64,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) { //MENU DE ITEMS
 
         getMenuInflater().inflate(R.menu.main, menu);
+
+        MenuItem create_data_base; //CREO EL BOTON DEL ITEM
+        create_data_base = menu.findItem(R.id.create_data_base); //LE ASIGNO EL ITEM
+        create_data_base.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() { //CREO EL EVENTO LISTENER
+            @Override
+            public boolean onMenuItemClick(@NonNull MenuItem menuItem) { //CREAMOS LA BASE DE DATOS
+                DbHelper dbHelper = new DbHelper(MainActivity.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                if(db != null){
+                    Toast.makeText(MainActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+                    create_data_base.setEnabled(false);
+                }else {
+                    Toast.makeText(MainActivity.this, "ERROR AL CREAR BASE DE DATOS", Toast.LENGTH_LONG).show();
+                }
+
+                return false;
+            }
+        });
         return true;
     }
 

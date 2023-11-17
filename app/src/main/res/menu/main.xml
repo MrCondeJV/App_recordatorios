@@ -7,8 +7,8 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_info"
+        android:id="@+id/create_data_base"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/informacion" />
+        android:title="Crear Base de Datos" />
 </menu>

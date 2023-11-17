@@ -62,11 +62,12 @@
         app:layout_constraintVertical_bias="0.326" />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnGuardarActividad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:background="#3AA33E"
         android:text="Guardar"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
@@ -75,11 +76,13 @@
         app:layout_constraintVertical_bias="0.547" />
 
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/btnCancelarActividad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:background="#F33527"
         android:text="Cancelar"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
